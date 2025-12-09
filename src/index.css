@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Career Bootcamp Brand Colors - Navy + Gold Theme */
+    --background: 38 33% 94%; /* #F7F2E8 - Ivory */
+    --foreground: 216 10% 14%; /* #1F2124 - Charcoal */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 216 10% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 10% 14%;
+
+    /* Primary Navy */
+    --primary: 223 52% 9%; /* #0C1224 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Gold Accent */
+    --primary-light: 44 88% 64%; /* #F4C553 */
+    
+    /* Gold for buttons and accents */
+    --gold: 44 88% 64%; /* #F4C553 */
+    --gold-dark: 42 81% 55%; /* #EBB52D */
+
+    /* Secondary - Ivory variations */
+    --secondary: 38 33% 92%;
+    --secondary-foreground: 216 10% 14%;
+
+    /* Muted - Darker Grey for better contrast */
+    --muted: 213 10% 92%; /* Light muted background */
+    --muted-foreground: 215 14% 40%; /* #626C71 - Medium gray for better contrast */
+
+    /* Accent - Gold */
+    --accent: 44 88% 64%;
+    --accent-foreground: 216 10% 14%;
+
+    /* Destructive - Error Red */
+    --destructive: 351 78% 42%; /* #C0152F */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Warning Orange */
+    --warning: 14 59% 42%; /* #A84B2F */
+    --warning-foreground: 0 0% 100%;
+
+    /* Success - Gold */
+    --success: 44 88% 64%;
+    --success-foreground: 216 10% 14%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 44 88% 64%;
+
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 4px 12px rgba(244, 197, 83, 0.3);
+
+    /* Text Colors */
+    --text-primary: 216 10% 14%; /* #1F2124 */
+    --text-secondary: 215 14% 40%; /* #626C71 - Medium gray for better contrast */
+    --text-muted: 215 14% 40%; /* #626C71 */
+
+    /* Sidebar */
+    --sidebar-background: 223 52% 9%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 44 88% 64%;
+    --sidebar-primary-foreground: 216 10% 14%;
+    --sidebar-accent: 223 52% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 223 52% 15%;
+    --sidebar-ring: 44 88% 64%;
+  }
+
+  .dark {
+    --background: 223 52% 9%;
+    --foreground: 38 33% 94%;
+
+    --card: 223 52% 12%;
+    --card-foreground: 38 33% 94%;
+
+    --popover: 223 52% 12%;
+    --popover-foreground: 38 33% 94%;
+
+    --primary: 44 88% 64%;
+    --primary-foreground: 216 10% 14%;
+
+    --primary-light: 42 81% 55%;
+
+    --secondary: 223 52% 15%;
+    --secondary-foreground: 38 33% 94%;
+
+    --muted: 223 52% 20%;
+    --muted-foreground: 213 10% 75%;
+
+    --accent: 44 88% 64%;
+    --accent-foreground: 216 10% 14%;
+
+    --destructive: 351 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 52% 20%;
+    --input: 223 52% 20%;
+    --ring: 44 88% 64%;
+
+    --sidebar-background: 223 52% 7%;
+    --sidebar-foreground: 38 33% 94%;
+    --sidebar-primary: 44 88% 64%;
+    --sidebar-primary-foreground: 216 10% 14%;
+    --sidebar-accent: 223 52% 15%;
+    --sidebar-accent-foreground: 38 33% 94%;
+    --sidebar-border: 223 52% 15%;
+    --sidebar-ring: 44 88% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1];
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-[42px] font-semibold leading-[1.2];
+  }
+
+  h3 {
+    @apply text-2xl md:text-[28px] font-semibold leading-[1.3];
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold leading-[1.4];
+  }
+
+  p {
+    @apply leading-relaxed text-foreground;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-glow {
+    @apply shadow-md hover:shadow-glow transition-shadow duration-300;
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-widest font-semibold text-gold;
+  }
+
+  .section-header {
+    @apply text-center max-w-3xl mx-auto mb-12 md:mb-16;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  /* Navy background sections */
+  .bg-navy {
+    @apply bg-primary text-white;
+  }
+  
+  /* Gold accent styles */
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+  
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
